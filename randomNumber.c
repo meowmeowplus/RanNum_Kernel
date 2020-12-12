@@ -110,5 +110,5 @@ module_init(randomNumber_init);
 module_exit(randomNumber_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("@meowmeowplus");
+MODULE_AUTHOR("@01230123 @bobyba2000 @meowmeowplus");
 MODULE_DESCRIPTION("A Simple randomNumber Kernel");
