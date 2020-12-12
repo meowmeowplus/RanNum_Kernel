@@ -63,24 +63,24 @@ $ make clean
 ### Cấu trúc
 
 **File operation**
--`device_open` : dùng để mở device, hàm sẽ xuất thông báo là đã mở được chưa.
--`device_close` : sau khi thực hiện xong, xuất thông báo đóng device.
--`device_read` : tạo ra một số ngẫu nhiên dùng hàm `get_random_byte()`, sau đó sẽ trả số đó cho user thông qua user_space. Cuối cùng xuất ra thông báo là có trả về được hay không.
+- `device_open` : dùng để mở device, hàm sẽ xuất thông báo là đã mở được chưa.
+- `device_close` : sau khi thực hiện xong, xuất thông báo đóng device.
+- `device_read` : tạo ra một số ngẫu nhiên dùng hàm `get_random_byte()`, sau đó sẽ trả số đó cho user thông qua user_space. Cuối cùng xuất ra thông báo là có trả về được hay không.
 
 **Module**
 
 - Hàm khởi tạo module
- * Kết nối các thao tác file thiết bị với các hàm tương ứng trong driver dùng hàm `int alloc_chrdev_region()`
- * Tạo device class với tên được định nghĩa sẵn
- * Tạo device với các thông tin đã khởi tạo bên trên.
- * Khởi tạo cấu trúc thiết bị kiểu character bằng cách khai báo biến cấu trúc `struct cdev c_dev` và gọi hàm `cdev_init()`.
- * Điều khiển cấu trúc này đến hệ thống file ảo VFS bằng cách gọi hàm `cdev_add()`.
+  * Kết nối các thao tác file thiết bị với các hàm tương ứng trong driver dùng hàm `int alloc_chrdev_region()`
+  * Tạo device class với tên được định nghĩa sẵn
+  * Tạo device với các thông tin đã khởi tạo bên trên.
+  * Khởi tạo cấu trúc thiết bị kiểu character bằng cách khai báo biến cấu trúc `struct cdev c_dev` và gọi hàm `cdev_init()`.
+  * Điều khiển cấu trúc này đến hệ thống file ảo VFS bằng cách gọi hàm `cdev_add()`.
 
 - Hàm gỡ module
- * Gỡ cấu trúc thiết bị bằng ` cdev_del()`
- * Hủy thiết bị `device_destroy()`
- * Hủy lớp thiết bị `class_destroy()`
- * Hủy kết nối ` unregister_chrdev_region()`
+  * Gỡ cấu trúc thiết bị bằng ` cdev_del()`
+  * Hủy thiết bị `device_destroy()`
+  * Hủy lớp thiết bị `class_destroy()`
+  * Hủy kết nối ` unregister_chrdev_region()`
 
 ### Ảnh chụp 
 
