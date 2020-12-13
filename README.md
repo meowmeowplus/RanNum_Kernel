@@ -83,7 +83,11 @@ $ make clean
   * Hủy kết nối ` unregister_chrdev_region()`
 
 ### Ảnh chụp 
+![1](image/1.png)
+- Hình `make` , `insert` module và chạy công cụ test.
 
+![2](image/2.png)
+- Hình chạy lệnh `dmesg` cho thấy module đã được nạp và trả kết quả về thành công.
 
 
 
