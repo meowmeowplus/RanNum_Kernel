@@ -49,13 +49,13 @@ $ gcc -o user_space user_space.c
 $ make
 
 // Insert module
-# insmod randomNumber.ko
+$ insmod randomNumber.ko
 
 // Run user tool 
-# ./user_space
+$ ./user_space
 
 // Remove module
-# rmmod randocha
+$ rmmod randocha
 
 // Cleaning
 $ make clean
